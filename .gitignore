@@ -1,7 +1,7 @@
 # Ignore raw and processed data files
 data/raw/*
 data/processed/*
-
+venv/
 # Keep folder structure
 !data/raw/.gitkeep
 !data/processed/.gitkeep
