@@ -19,10 +19,8 @@ def load_data():
     # Load predictions
     predictions = pd.read_csv(predictions_path)
     # st.write("Predictions columns:", predictions.columns.tolist())  # Debugging
-    print(predictions)
     # Load features and reset index to make SK_ID_CURR a column
     features = pd.read_pickle(features_path)
-    print(features)
     features = features.reset_index()  # Convert index (SK_ID_CURR) to a column
     # st.write("Features columns after reset_index:", features.columns.tolist())  # Debugging
 
