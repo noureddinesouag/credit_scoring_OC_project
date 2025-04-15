@@ -4,3 +4,4 @@ data/features/train_selected.pkl filter=lfs diff=lfs merge=lfs -text
 data/features/test_selected.pkl filter=lfs diff=lfs merge=lfs -text
 data/processed/test_final_mock.pkl filter=lfs diff=lfs merge=lfs -text
 data/processed/train_final_mock.pkl filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text
