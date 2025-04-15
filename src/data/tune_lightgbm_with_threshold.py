@@ -77,7 +77,7 @@ logger.info(f"Optimal threshold: {best_threshold:.2f}")
 logger.info(f"Optimized business cost: {-best_cost:.4f}")
 
 # Save model, scaler, and threshold locally
-model_path = os.path.join(models_dir, "best_model.pkl")  # Renamed to match app.py
+model_path = os.path.join(models_dir, "lightgbm_model.pkl")
 scaler_path = os.path.join(models_dir, "scaler.pkl")
 threshold_path = os.path.join(models_dir, "best_threshold.txt")
 joblib.dump(model, model_path)

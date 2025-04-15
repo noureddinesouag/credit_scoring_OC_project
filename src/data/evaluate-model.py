@@ -56,7 +56,7 @@ best_threshold = float(valid_runs.iloc[0]["params.optimal_threshold"])
 logger.info(f"Loaded optimal threshold from MLflow: {best_threshold:.2f}")
 
 # Load model and scaler from local files (fallback to MLflow if not found)
-model_path = os.path.join(models_dir, "best_model.pkl")
+model_path = os.path.join(models_dir, "lightgbm_model.pkl")
 scaler_path = os.path.join(models_dir, "scaler.pkl")
 if os.path.exists(model_path) and os.path.exists(scaler_path):
     model = joblib.load(model_path)

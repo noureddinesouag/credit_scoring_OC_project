@@ -5,21 +5,24 @@ import os
 import plotly.express as px
 import plotly.graph_objects as go
 import joblib
+
 # File paths
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "../.."))
 predictions_path = os.path.join(project_root, "data/predictions/test_predictions_with_labels.csv")
 features_path = os.path.join(project_root, "data/features/test_selected.pkl")
 model_path = os.path.join(project_root, "src/models/lightgbm_model.pkl")
+
 # Load data
 @st.cache_data
 def load_data():
     # Load predictions
     predictions = pd.read_csv(predictions_path)
     # st.write("Predictions columns:", predictions.columns.tolist())  # Debugging
-
+    print(predictions)
     # Load features and reset index to make SK_ID_CURR a column
     features = pd.read_pickle(features_path)
+    print(features)
     features = features.reset_index()  # Convert index (SK_ID_CURR) to a column
     # st.write("Features columns after reset_index:", features.columns.tolist())  # Debugging
 
@@ -36,12 +39,13 @@ def load_data():
 @st.cache_resource
 def load_model():
     return joblib.load(model_path)
+
+# Sidebar filter
 st.sidebar.title("⚙️ Filter Options")
 risk_filter = st.sidebar.selectbox(
     "Select risk category to filter:",
     options=["All", "Low Risk (<30%)", "Moderate Risk (30%-70%)", "High Risk (≥70%)"]
 )
-
 
 # Load data with error handling
 try:
@@ -49,6 +53,7 @@ try:
 except Exception as e:
     st.error(f"Error loading data: {str(e)}")
     st.stop()
+
 # Apply selected filter
 if risk_filter == "Low Risk (<30%)":
     data = data[data["TARGET_proba"] < 0.3]
@@ -58,13 +63,31 @@ elif risk_filter == "High Risk (≥70%)":
     data = data[data["TARGET_proba"] >= 0.7]
 
 # Streamlit app
-st.title(" Credit Scoring Dashboard")
+st.title("Credit Scoring Dashboard")
 st.markdown("This dashboard helps customer relationship managers understand client credit risk and explore client information.")
 
 # Client selection
 st.header("Select a Client")
 client_ids = data["SK_ID_CURR"].astype(str).tolist()
-selected_client = st.selectbox("Choose a client (SK_ID_CURR):", client_ids)
+
+# Check if client_ids is empty
+if not client_ids:
+    st.error("No clients available to display. Please check the data.")
+    st.stop()
+
+# Set the first client as the default selection
+selected_client = st.selectbox(
+    "Choose a client (SK_ID_CURR):",
+    client_ids,
+    index=0  # Default to the first client in the list
+)
+
+# Ensure selected_client is not None before proceeding
+if selected_client is None:
+    st.warning("Please select a client to continue.")
+    st.stop()
+
+# Convert selected_client to int and filter data
 client_data = data[data["SK_ID_CURR"] == int(selected_client)]
 
 # 1. Visualize Score and Interpretation
@@ -139,6 +162,7 @@ avg_value = all_values.mean()
 st.write(f"**Average {comparison_feature.replace('_', ' ')} across all clients:** {avg_value:,.2f}")
 st.write(f"**Selected client's {comparison_feature.replace('_', ' ')}:** {comparison_value:,.2f}")
 
+# 4. Similar Clients
 st.header("👥 Similar Clients")
 numeric_cols = ["AMT_INCOME_TOTAL", "AMT_CREDIT", "DAYS_EMPLOYED"]
 client_vector = client_data[numeric_cols].values[0]
@@ -146,6 +170,8 @@ data["similarity"] = data[numeric_cols].apply(lambda row: np.linalg.norm(row - c
 
 similar_clients = data.sort_values("similarity").head(10).drop("similarity", axis=1)
 st.dataframe(similar_clients[["SK_ID_CURR", "TARGET_proba", *numeric_cols]])
+
+# Custom CSS
 st.markdown("""
     <style>
         html, body, [class*="css"]  {
