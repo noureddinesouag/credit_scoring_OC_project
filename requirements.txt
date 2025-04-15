@@ -12,3 +12,4 @@ joblib
 uvicorn
 fastapi
 pytest
+gradio
