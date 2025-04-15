@@ -14,7 +14,7 @@ logging.basicConfig(filename='api.log', level=logging.INFO,
 # File paths
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
-model_path = os.path.join(project_root, "src", "models", "best_model.pkl")
+model_path = os.path.join(project_root, "src", "models", "lightgbm_model.pkl")
 threshold_path = os.path.join(project_root, "src", "models", "best_threshold.txt")
 scaler_path = os.path.join(project_root, "src", "models", "scaler.pkl")
 train_selected_path = os.path.join(project_root, "data", "features", "train_selected.pkl")

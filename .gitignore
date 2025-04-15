@@ -24,8 +24,7 @@ data/raw/*
 data/processed/*
 
 # Allow keeping folder structure
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+
 
 # Ignore all big data file formats
 *.csv
@@ -39,3 +38,12 @@ data/processed/*
 
 # Others
 *.sqlite
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/predictions/test_predictions_with_labels.csv
+!src/models/lightgbm_model.pkl
+!src/models/best_threshold.txt
+!data/features/train_selected.pkl
+!data/features/test_selected.pkl
+!data/processed/test_final_mock.pkl
+!data/processed/train_final_mock.pkl
