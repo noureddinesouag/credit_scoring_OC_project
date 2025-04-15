@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744699468701
+current_stage: None
+description: ''
+last_updated_timestamp: 1744699468701
+name: credit-scoring-lightgbm
+run_id: 6c2ceccf3454431f910f83011b29f1de
+run_link: ''
+source: file:///C:/work/Credit-scoring-project/mlruns/545084184668076345/6c2ceccf3454431f910f83011b29f1de/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/work/Credit-scoring-project/mlruns/545084184668076345/6c2ceccf3454431f910f83011b29f1de/artifacts/model
+user_id: null
+version: 1

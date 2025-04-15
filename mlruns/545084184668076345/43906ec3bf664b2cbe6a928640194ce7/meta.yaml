@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/work/Credit-scoring-project/mlruns/545084184668076345/43906ec3bf664b2cbe6a928640194ce7/artifacts
+end_time: 1744658325005
+entry_point_name: ''
+experiment_id: '545084184668076345'
+lifecycle_stage: active
+run_id: 43906ec3bf664b2cbe6a928640194ce7
+run_name: XGBoost
+run_uuid: 43906ec3bf664b2cbe6a928640194ce7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744658287626
+status: 3
+tags: []
+user_id: RGB

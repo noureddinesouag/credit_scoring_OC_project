@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/work/Credit-scoring-project/mlruns/0/483bcf6a412b429da9d4640ec90b1b3e/artifacts
+end_time: 1744354336508
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 483bcf6a412b429da9d4640ec90b1b3e
+run_name: LightGBM_balanced_with_threshold
+run_uuid: 483bcf6a412b429da9d4640ec90b1b3e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744354321964
+status: 3
+tags: []
+user_id: RGB

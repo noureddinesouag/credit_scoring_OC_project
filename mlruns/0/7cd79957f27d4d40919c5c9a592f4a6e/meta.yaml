@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/work/Credit-scoring-project/mlruns/0/7cd79957f27d4d40919c5c9a592f4a6e/artifacts
+end_time: 1744297173371
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7cd79957f27d4d40919c5c9a592f4a6e
+run_name: LightGBM_tuned
+run_uuid: 7cd79957f27d4d40919c5c9a592f4a6e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744297161628
+status: 3
+tags: []
+user_id: RGB

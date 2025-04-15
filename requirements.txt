@@ -4,3 +4,11 @@ scikit-learn
 matplotlib
 seaborn
 lightgbm
+mlflow
+xgboost
+streamlit
+plotly
+joblib
+uvicorn
+fastapi
+pytest

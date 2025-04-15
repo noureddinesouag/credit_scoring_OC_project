@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/work/Credit-scoring-project/mlruns/545084184668076345/fb6bf7b98201412d9d6e39c0e08b6b7d/artifacts
+end_time: 1744280668254
+entry_point_name: ''
+experiment_id: '545084184668076345'
+lifecycle_stage: active
+run_id: fb6bf7b98201412d9d6e39c0e08b6b7d
+run_name: LogisticRegression
+run_uuid: fb6bf7b98201412d9d6e39c0e08b6b7d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744280640101
+status: 3
+tags: []
+user_id: RGB

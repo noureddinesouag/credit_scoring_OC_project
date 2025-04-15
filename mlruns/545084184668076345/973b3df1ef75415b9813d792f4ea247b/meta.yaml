@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/work/Credit-scoring-project/mlruns/545084184668076345/973b3df1ef75415b9813d792f4ea247b/artifacts
+end_time: 1744658237567
+entry_point_name: ''
+experiment_id: '545084184668076345'
+lifecycle_stage: active
+run_id: 973b3df1ef75415b9813d792f4ea247b
+run_name: RandomForest
+run_uuid: 973b3df1ef75415b9813d792f4ea247b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744658120609
+status: 3
+tags: []
+user_id: RGB
