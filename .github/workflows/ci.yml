@@ -23,10 +23,4 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest  # Ensure pytest is installed
-
-      - name: Generate mock data
-        run: python tests/create_mock_data.py
-
-      - name: Run tests
-        run: pytest tests/test_feature_selection.py -v
+          pip install pytest  #

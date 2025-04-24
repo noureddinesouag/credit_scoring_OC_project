@@ -14,7 +14,7 @@ def timer(title):
     """Context manager for timing code execution."""
     t0 = time.time()
     yield
-    print(f"{title} - done in {time.time() - t0:.0f}s")
+    print(f"{title} - done in {time.time() - t0:.0f}ss")
 
 def reduce_mem_usage(df, verbose=True):
     """Reduce memory usage of a dataframe by converting data types."""
